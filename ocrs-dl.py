@@ -10,5 +10,5 @@ display(HTML("<center><h2 style=\"font-family:Trebuchet MS;color:#4f8bd6;\">Succ
 download()
 clear_output()
 display(HTML("<center><h2 style=\"font-family:Trebuchet MS;color:#4f8bd6;\">Successfully downloaded !</h2><br></center>"))
-os.remove("/ocrs-dl-by-kadirov-dz/out.txt")
-os.remove("/ocrs-dl-by-kadirov-dz/urlinfo.txt")
+os.remove("out.txt")
+os.remove("urlinfo.txt")
