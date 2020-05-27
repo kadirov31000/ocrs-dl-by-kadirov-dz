@@ -20,7 +20,7 @@ class ocrs:
 
     response = requests.get(url)
 
-
+    print('start extract urls')
     for link in BeautifulSoup(response.content, 'html.parser', parse_only=SoupStrainer('a', href=True)):
         res = requests.get('https://openclassrooms.com/%s' % (link['href']))
         soup = bs4.BeautifulSoup(res.text, 'html.parser')
@@ -33,7 +33,13 @@ class ocrs:
             with open("urlinfo.txt", 'a') as txtFile:
                 txtFile.writelines("{}\n".format(lil))
 
-    print ('end extract url video')        
+    print ('end extract url video')
+    with open("urlinfo.txt", "r") as f:
+        lines = f.readlines()
+    with open("urlinfo.txt", "w") as f:
+        for line in lines:
+            if line.strip("\n") != "https://player.vimeo.com/vi":
+                f.write(line)
     lines_seen = set() # holds lines already seen
     outfile = open("out.txt", "w")
     for line in open("urlinfo.txt", "r"):
