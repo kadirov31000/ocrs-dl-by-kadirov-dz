@@ -1,6 +1,6 @@
 selenium
 progressbar
 requests
-urllib
+
 bs4
 wget
