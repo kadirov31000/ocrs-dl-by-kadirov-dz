@@ -41,7 +41,7 @@ class download:
             chrome_options.add_argument('--no-sandbox')
             chrome_options.add_argument('--disable-dev-shm-usage')
         
-            ndriver =webdriver.Chrome('bot\driver/chromedriver.exe',chrome_options=chrome_options)
+            ndriver = webdriver.Chrome('chromedriver',chrome_options=chrome_options)
         
             baseURL = 'http://savevideo.me/'
             ndriver.get(baseURL)
